@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #1c1a27;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background-color: #1c1a27;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #ddf;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.menu-btn {
+    font-size: 30px;
+    color: #ddf;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #5C5A66;
+    color: #fff;
+    transition: left 0.3s ease;
+    padding-top: 50px;
+    z-index: 9;
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu li {
+    padding: 15px;
+    text-align: center;
+}
+
+.side-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.side-menu a:hover {
+    text-decoration: underline;
+}
+
+.home-container {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+    color: #ddf;
+}
+
+.home-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.home-container p {
+    font-size: 1.2em;
+    max-width: 600px;
+}
+
+.highlighted-name {
+    color: #fcefb4;
+}
+
+/* CARDS */
+
+#infoBtn {
+    background-color: #888;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 11;
+}
+
+/* CARDS */
+#card-game {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    margin: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.card {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    user-select: none;
+    border: none;
+    background-color: #ccc;
+    transition: background-color 0.3s;
+}
+
+.card.hira:not(.revealed):not(.matched) {
+    background-color: #7268A6;
+}
+
+.card.romaji:not(.revealed):not(.matched) {
+    background-color: #ddf;
+}
+
+.card.revealed,
+.card.matched {
+    background-color: #FFF9DE;
+    border: none;
+}
+
+.card.matched {
+    visibility: hidden;
+}
+
+#matchedPairs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 600px;
+    gap: 10px;
+}
+
+.pair-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+}
+
+.pair-card small {
+    font-size: 24px;
+    color: #666;
+}
+
+#restartBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4cafa5; /* Cor original */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#restartBtn:hover {
+    background-color: #66bcb4;
+}
+
+#infoPanel {
+    display: none;
+    margin: 10px auto;
+    max-width: 700px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+#infoPanel table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 20px;
+    text-align: center;
+}
+
+#infoPanel th,
+#infoPanel td {
+    font-size: 24px;
+    border: 1px solid #ccc;
+    padding: 6px;
+}
+
+#infoPanel th {
+    background-color: #f5f5f5;
+}
